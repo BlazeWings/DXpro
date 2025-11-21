@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>党建知识题库系统</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 党建知识题库系统</h1>
+            <p>全面展示与专项训练平台</p>
+        </header>
+
+        <nav class="nav-tabs">
+            <button class="tab-btn active" onclick="showSection('display')">📖 题目展示</button>
+            <button class="tab-btn" onclick="showSection('training')">🎯 专项训练</button>
+        </nav>
+
+        <!-- 题目展示区域 -->
+        <div id="display-section" class="section">
+            <div class="controls">
+                <h3>选择题型：</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="filterQuestions('all')">显示全部</button>
+                    <button class="filter-btn" onclick="filterQuestions('judge')">判断题</button>
+                    <button class="filter-btn" onclick="filterQuestions('single')">单选题</button>
+                    <button class="filter-btn" onclick="filterQuestions('multiple')">多选题</button>
+                    <button class="filter-btn" onclick="filterQuestions('fill')">填空题</button>
+                </div>
+            </div>
+            <div id="questions-container" class="questions-container">
+                <p style="text-align: center; color: #666;">正在加载题目...</p>
+            </div>
+        </div>
+
+        <!-- 专项训练区域 -->
+        <div id="training-section" class="section" style="display: none;">
+            <div class="training-controls">
+                <h3>专项训练设置</h3>
+                <p>从每个题型中随机抽取40道题目进行训练</p>
+                <button class="start-btn" onclick="startTraining()">🚀 开始训练</button>
+                <div class="answer-control">
+                    <label>
+                        <input type="checkbox" id="show-answers" onchange="toggleAnswers()">
+                        显示答案
+                    </label>
+                </div>
+            </div>
+            <div id="training-container" class="questions-container">
+                <p style="text-align: center; color: #666;">点击"开始训练"按钮开始</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 党建知识题库系统 | 基于GitHub Pages构建</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
